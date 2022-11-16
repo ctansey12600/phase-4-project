@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  # resources :user_ingredients
-  # resources :recipe_ingredients
-  # resources :ingredients
-  # resources :recipes
-  # resources :reviews
-  resources :drinks, only: [:index]
-  # resources :users
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
