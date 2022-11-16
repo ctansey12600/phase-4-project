@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_11_15_233901) do
 
   create_table "recipe_ingredients", force: :cascade do |t|
     t.integer "step_number"
-    t.string "measurment"
+    t.string "measurement"
     t.integer "recipe_id"
     t.integer "ingredient_id"
     t.datetime "created_at", precision: 6, null: false

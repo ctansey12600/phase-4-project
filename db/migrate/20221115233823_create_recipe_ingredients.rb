@@ -2,7 +2,7 @@ class CreateRecipeIngredients < ActiveRecord::Migration[6.1]
   def change
     create_table :recipe_ingredients do |t|
       t.integer :step_number
-      t.string :measurment
+      t.string :measurement
       t.integer :recipe_id
       t.integer :ingredient_id
 
