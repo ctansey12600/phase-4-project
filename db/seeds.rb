@@ -1,6 +1,6 @@
 puts "Seeding data..."
 
-20.times do
+10.times do
   user =
     User.create(
       username: Faker::Internet.username,
