@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # resources :ingredients
   # resources :recipes
   # resources :reviews
-  # resources :drinks
+  resources :drinks, only: [:index]
   # resources :users
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
