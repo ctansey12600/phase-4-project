@@ -1,5 +1,8 @@
 import React from "react";
 
+import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
+
 function NavBar({ setUser }) {
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -9,9 +12,9 @@ function NavBar({ setUser }) {
     });
   }
   return (
-    <nav>
-      <button onClick={handleLogoutClick}>Logout</button>
-    </nav>
+    <Navbar>
+      <Button onClick={handleLogoutClick}>Logout</Button>
+    </Navbar>
   );
 }
 

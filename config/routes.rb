@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :drinks, only: %i[index show]
+
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"

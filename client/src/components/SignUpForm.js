@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
 function SignUpForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,49 +31,59 @@ function SignUpForm({ onLogin }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="first_name">First Name:</label>
-      <input
-        type="text"
-        autoComplete="off"
-        id="first_name"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      <label htmlFor="last_name">Last Name:</label>
-      <input
-        type="text"
-        autoComplete="off"
-        id="last_name"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        autoComplete="off"
-        id="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        autoComplete="off"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <label htmlFor="password_confirmation">Confirm Password:</label>
-      <input
-        type="password"
-        autoComplete="off"
-        id="password_confirmation"
-        value={passwordConfirmation}
-        onChange={(e) => setPasswordConfirmation(e.target.value)}
-      />
-      <button type="submit">Sign Up</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group controlId="formSignUpFirstName">
+        <Form.Label>First Name:</Form.Label>
+        <Form.Control
+          type="text"
+          autoComplete="off"
+          placeholder="Enter First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        ></Form.Control>
+      </Form.Group>
+      <Form.Group controlId="formSignUpLastName">
+        <Form.Label>Last Name:</Form.Label>
+        <Form.Control
+          type="text"
+          autoComplete="off"
+          placeholder="Enter Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        ></Form.Control>
+      </Form.Group>
+      <Form.Group controlId="formSignUpUsername">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
+          type="text"
+          autoComplete="off"
+          placeholder="Enter Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        ></Form.Control>
+      </Form.Group>
+      <Form.Group controlId="formSignUpPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
+          type="password"
+          autoComplete="off"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        ></Form.Control>
+      </Form.Group>
+      <Form.Group controlId="formSignUpPasswordConfirmation">
+        <Form.Label>Password Confirmation:</Form.Label>
+        <Form.Control
+          type="password"
+          autoComplete="off"
+          placeholder="Confirm Password"
+          value={passwordConfirmation}
+          onChange={(e) => setPasswordConfirmation(e.target.value)}
+        ></Form.Control>
+      </Form.Group>
+      <Button type="submit">Sign Up</Button>
+    </Form>
   );
 }
 

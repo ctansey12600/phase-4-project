@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,23 +25,29 @@ function LoginForm({ onLogin }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        autoComplete="off"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        autoComplete="off"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group controlId="formLoginUsername">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
+          type="text"
+          autoComplete="off"
+          placeholder="Enter Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        ></Form.Control>
+      </Form.Group>
+      <Form.Group controlId="formLoginPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
+          type="password"
+          autoComplete="off"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        ></Form.Control>
+      </Form.Group>
+      <Button type="submit">Login</Button>
+    </Form>
   );
 }
 
